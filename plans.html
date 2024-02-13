@@ -8,24 +8,174 @@
     <title>Choose a Plan - GameBox</title>
 
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            transition: background-color 0.5s ease;
+        }
+
         .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 0;
+            text-align: center;
+            background-color: transparent;
+            transition: background-color 0.5s ease;
+            z-index: 1000;
+        }
+
+        .header.active {
             background-color: #fff;
         }
 
         .header a {
-            color: #000;
+            text-decoration: none;
+            color: #fff;
+            margin: 0 20px;
+            font-size: 1.2em;
+            position: relative;
+            transition: color 0.3s ease;
         }
 
+        .header.active a {
+            text-decoration: none;
+            color: #000;
+            margin: 0 20px;
+            font-size: 1.2em;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .header a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            background-color: #e74c3c;
+            bottom: -2px;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+
+        .header a:hover::after {
+            transform-origin: bottom left;
+            transform: scaleX(1);
+        }
+
+        /* ... other styles ... */
+
+        .subscription-page {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .subscription-intro {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .subscription-options {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .subscription-option {
+            width: 30%;
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .subscription-option:hover {
+            transform: scale(1.05);
+        }
+
+        .subscription-option h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #e74c3c;
+        }
+
+        .price {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .subscription-option ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .subscribe-button {
+            background-color: #e74c3c;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .subscribe-button:hover {
+            background-color: #333;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer a {
+            color: #e74c3c;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-icons li {
+            margin: 0 10px;
+        }
     </style>
 </head>
 
 <body>
-    <div class="header">
-        <!-- header options -->
-        <a href="index.html">Home</a>
-        <a href="plans.html">Subscription Plans</a>
-        <a href="contact-us.html">Contact Us</a>
-    </div>
+    <!-- ... same header code ... -->
 
     <div class="subscription-page">
         <div class="subscription-intro">
@@ -77,20 +227,11 @@
         </div>
     </div>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2024 GameBox. All rights reserved.</p>
-            <p>Connect with us on social media:</p>
-            <ul class="social-icons">
-                <li><a href="https://youtu.be/dQw4w9WgXcQ?si=3cdhX8d9ih6_6b5y" class="underline" target=”_blank”>Facebook</a></li>
-                <li><a href="https://youtu.be/dQw4w9WgXcQ?si=3cdhX8d9ih6_6b5y" class="underline" target=”_blank”>Twitter</a></li>
-                <li><a href="https://youtu.be/dQw4w9WgXcQ?si=3cdhX8d9ih6_6b5y" class="underline" target=”_blank”>Instagram</a></li>
-            </ul>
-        </div>
-    </footer>
+    <!-- ... same footer code ... -->
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="script.js"></script>
 </body>
 
 </html>
+
