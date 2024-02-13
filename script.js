@@ -8,9 +8,3 @@ $(function() {
         }
     });
 });
-
-// turns header into collapsible
-function toggleMenu() {
-    var header = document.querySelector('.header');
-    header.classList.toggle('active');
-}
