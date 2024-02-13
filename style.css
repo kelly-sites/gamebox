@@ -243,39 +243,3 @@ h1 {
         margin-top: 20px;       /* Add space between header and form-section on mobile */
     }
 }
-
-
-/* Header on mobile */
-@media only screen and (max-width: 767px) {
-    .header {
-        flex-direction: column;         /* Stack the header links vertically */
-        align-items: center;
-        position: relative;
-    }
-
-    .header.active {
-        background-color: transparent; /* Keep background transparent when active */
-    }
-
-    .header a {
-        text-align: center;
-        margin: 10px 0;             /* Add spacing between header links on mobile */
-    }
-
-    .header a::after {
-        content: none;              /* Remove underline on mobile */
-    }
-
-    .header a:hover::after {
-        transform: scaleX(0);       /* Remove underline on mobile */
-    }
-
-    .header a.active {
-        background-color: #e74c3c; /* Highlight active link on mobile */
-        color: #fff;
-    }
-
-    .header a:not(.active):hover {
-        color: #e74c3c;         /* Change link color on hover on mobile */
-    }
-}
